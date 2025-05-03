@@ -17,12 +17,15 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
     }
   };
 
+  // URL do WhatsApp
+  const whatsappUrl = "https://wa.me/5511954001013";
+
   return (
     <section id="hero" className={cn('relative overflow-hidden min-h-[90vh] flex items-center', className)}>
       {/* Background elements */}
       <div className="absolute inset-0 z-0">
         <div className="absolute top-20 left-[10%] w-[500px] h-[500px] rounded-full bg-primary/5 blur-3xl" />
-        <div className="absolute bottom-20 right-[10%] w-[400px] h-[400px] rounded-full bg-primary/5 blur-3xl" />
+        <div className="absolute bottom-20 right-[10%] w-[400px] h-[400px] rounded-full bg-secondary/5 blur-3xl" />
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 relative z-10 py-20 md:py-32">
@@ -33,6 +36,11 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
             transition={{ duration: 0.6 }}
             className="mb-6"
           >
+            <img 
+              src="/lovable-uploads/1466d97a-812a-4216-93c7-437f435dd432.png" 
+              alt="Inteliagencia Digital Logo"
+              className="w-32 h-32 object-contain mb-6"
+            />
             <span className="inline-block py-1 px-4 rounded-full bg-primary/10 text-primary text-sm font-medium mb-5">
               Transformação Digital
             </span>
@@ -45,7 +53,7 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
             className="text-balance mb-6"
           >
             Elevando o potencial do seu negócio com{' '}
-            <span className="text-primary">inteligência digital</span>
+            <span className="text-primary">Inteliagencia Digital</span>
           </motion.h1>
 
           <motion.p
@@ -75,12 +83,7 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
               size="lg"
               variant="outline"
               className="rounded-full px-8 py-6 text-base border-slate-200 hover:bg-slate-100 transition-all duration-300"
-              onClick={() => {
-                const contactSection = document.querySelector('#contact');
-                if (contactSection) {
-                  contactSection.scrollIntoView({ behavior: 'smooth' });
-                }
-              }}
+              onClick={() => window.open(whatsappUrl, "_blank")}
             >
               Fale conosco
             </Button>

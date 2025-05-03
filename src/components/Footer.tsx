@@ -7,14 +7,23 @@ interface FooterProps {
 }
 
 const Footer: React.FC<FooterProps> = ({ className }) => {
+  const whatsappUrl = "https://wa.me/5511954001013";
+  
   return (
     <footer className={cn('bg-white dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800', className)}>
       <div className="container mx-auto px-4 sm:px-6 py-12 md:py-16">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
           <div className="col-span-1 md:col-span-2">
             <div className="flex flex-col h-full">
-              <a href="#" className="text-2xl font-display font-semibold text-foreground mb-4">
-                Inteliagencia
+              <a href="#" className="flex items-center mb-4">
+                <img 
+                  src="/lovable-uploads/1466d97a-812a-4216-93c7-437f435dd432.png" 
+                  alt="Inteliagencia Digital Logo" 
+                  className="w-12 h-12 object-contain mr-3"
+                />
+                <span className="text-2xl font-display font-semibold text-foreground">
+                  Inteliagencia Digital
+                </span>
               </a>
               
               <p className="text-muted-foreground mb-6 max-w-md">
@@ -37,9 +46,9 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
                   </svg>
                 </a>
                 
-                <a href="#" className="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-foreground/70 hover:text-primary transition-colors">
+                <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-foreground/70 hover:text-primary transition-colors">
                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
+                    <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
                   </svg>
                 </a>
                 

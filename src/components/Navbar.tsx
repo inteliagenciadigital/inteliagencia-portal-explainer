@@ -36,6 +36,9 @@ const Navbar: React.FC<NavbarProps> = ({ className }) => {
     }
   };
 
+  // URL do WhatsApp
+  const whatsappUrl = "https://wa.me/5511954001013";
+
   return (
     <nav
       className={cn(
@@ -52,7 +55,7 @@ const Navbar: React.FC<NavbarProps> = ({ className }) => {
             href="#"
             className="text-2xl font-display font-semibold text-foreground transition-opacity hover:opacity-80"
           >
-            Inteliagencia
+            Inteliagencia Digital
           </a>
         </div>
 
@@ -68,7 +71,7 @@ const Navbar: React.FC<NavbarProps> = ({ className }) => {
             </button>
           ))}
           <Button
-            onClick={() => scrollToSection('#contact')}
+            onClick={() => window.open(whatsappUrl, "_blank")}
             className="button-primary"
           >
             Fale Conosco
@@ -104,7 +107,7 @@ const Navbar: React.FC<NavbarProps> = ({ className }) => {
             </button>
           ))}
           <Button
-            onClick={() => scrollToSection('#contact')}
+            onClick={() => window.open(whatsappUrl, "_blank")}
             className="button-primary w-full mt-4"
           >
             Fale Conosco

@@ -43,8 +43,14 @@ const Contact: React.FC<ContactProps> = ({ className }) => {
         message: '',
       });
       setIsSubmitting(false);
+      
+      // Abrir WhatsApp após envio do formulário
+      window.open("https://wa.me/5511954001013?text=Olá! Acabei de enviar uma mensagem pelo site da Inteliagencia Digital.", "_blank");
     }, 1500);
   };
+
+  // URL do WhatsApp
+  const whatsappUrl = "https://wa.me/5511954001013";
 
   const contactInfo = [
     {
@@ -55,9 +61,9 @@ const Contact: React.FC<ContactProps> = ({ className }) => {
     },
     {
       icon: Phone,
-      title: 'Telefone',
-      value: '+55 (11) 9999-8888',
-      href: 'tel:+551199998888',
+      title: 'WhatsApp',
+      value: '+55 (11) 95400-1013',
+      href: whatsappUrl,
     },
     {
       icon: MapPin,
@@ -72,7 +78,7 @@ const Contact: React.FC<ContactProps> = ({ className }) => {
       {/* Background elements */}
       <div className="absolute inset-0 z-0">
         <div className="absolute top-20 right-[10%] w-[400px] h-[400px] rounded-full bg-primary/5 blur-3xl" />
-        <div className="absolute bottom-20 left-[10%] w-[300px] h-[300px] rounded-full bg-primary/5 blur-3xl" />
+        <div className="absolute bottom-20 left-[10%] w-[300px] h-[300px] rounded-full bg-secondary/5 blur-3xl" />
       </div>
       
       <div className="container mx-auto px-4 sm:px-6 relative z-10">
@@ -199,8 +205,8 @@ const Contact: React.FC<ContactProps> = ({ className }) => {
                   <motion.a
                     key={index}
                     href={item.href}
-                    target={item.icon === MapPin ? "_blank" : undefined}
-                    rel={item.icon === MapPin ? "noopener noreferrer" : undefined}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     initial={{ opacity: 0, y: 10 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}

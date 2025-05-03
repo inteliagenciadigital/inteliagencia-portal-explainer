@@ -9,7 +9,7 @@ interface TransitionLayoutProps {
 
 const TransitionLayout: React.FC<TransitionLayoutProps> = ({ children, className }) => {
   return (
-    <div className={cn("transition-opacity duration-500 animate-fade-in", className)}>
+    <div className={cn("transition-opacity duration-500 animate-fade-in bg-gradient-to-b from-background to-background/95", className)}>
       {children}
     </div>
   );
