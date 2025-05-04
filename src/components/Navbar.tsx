@@ -50,7 +50,12 @@ const Navbar: React.FC<NavbarProps> = ({ className }) => {
       )}
     >
       <div className="container mx-auto px-4 sm:px-6 flex items-center justify-between">
-        <div className="flex items-center">
+        <div className="flex items-center gap-3">
+          <img 
+            src="/lovable-uploads/73ec3876-d56b-48ad-afc6-4c02d54a2790.png" 
+            alt="Inteliagencia Digital Logo" 
+            className="w-12 h-12 object-contain"
+          />
           <a
             href="#"
             className="text-2xl font-display font-semibold text-foreground transition-opacity hover:opacity-80"
@@ -61,7 +66,7 @@ const Navbar: React.FC<NavbarProps> = ({ className }) => {
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center space-x-8">
-          {navLinks.map((link) => (
+          {navLinks.map((link, index) => (
             <button
               key={link.name}
               onClick={() => scrollToSection(link.href)}
@@ -72,7 +77,7 @@ const Navbar: React.FC<NavbarProps> = ({ className }) => {
           ))}
           <Button
             onClick={() => window.open(whatsappUrl, "_blank")}
-            className="button-primary"
+            className="bg-[#304FFE] hover:bg-[#304FFE]/90 text-white rounded-lg px-6 py-2"
           >
             Fale Conosco
           </Button>
@@ -108,7 +113,7 @@ const Navbar: React.FC<NavbarProps> = ({ className }) => {
           ))}
           <Button
             onClick={() => window.open(whatsappUrl, "_blank")}
-            className="button-primary w-full mt-4"
+            className="bg-[#304FFE] hover:bg-[#304FFE]/90 text-white w-full mt-4"
           >
             Fale Conosco
           </Button>

@@ -3,7 +3,7 @@ import React from 'react';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import { motion } from 'framer-motion';
-import { ArrowRight, MousePointer } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 interface HeroProps {
   className?: string;
@@ -37,23 +37,20 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
             className="mb-6"
           >
             <img 
-              src="/lovable-uploads/1466d97a-812a-4216-93c7-437f435dd432.png" 
+              src="/lovable-uploads/73ec3876-d56b-48ad-afc6-4c02d54a2790.png" 
               alt="Inteliagencia Digital Logo"
-              className="w-32 h-32 object-contain mb-6"
+              className="w-40 h-40 object-contain mb-10"
             />
-            <span className="inline-block py-1 px-4 rounded-full bg-primary/10 text-primary text-sm font-medium mb-5">
-              Transformação Digital
-            </span>
           </motion.div>
 
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-balance mb-6"
+            className="text-[2.75rem] md:text-[4rem] font-bold text-balance mb-6"
           >
             Elevando o potencial do seu negócio com{' '}
-            <span className="text-primary">Inteliagencia Digital</span>
+            <span className="text-[#304FFE]">Inteliagencia Digital</span>
           </motion.h1>
 
           <motion.p
@@ -73,7 +70,7 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
           >
             <Button
               size="lg"
-              className="rounded-full px-8 py-6 text-base bg-primary hover:bg-primary/90 transition-all duration-300 hover:shadow-lg group"
+              className="bg-[#304FFE] hover:bg-[#304FFE]/90 text-white rounded-lg px-8 py-6 text-base transition-all duration-300 group"
               onClick={scrollToServices}
             >
               Conheça nossos serviços
@@ -82,23 +79,13 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
             <Button
               size="lg"
               variant="outline"
-              className="rounded-full px-8 py-6 text-base border-slate-200 hover:bg-slate-100 transition-all duration-300"
+              className="border-slate-300 hover:bg-slate-100 rounded-lg px-8 py-6 text-base transition-all duration-300"
               onClick={() => window.open(whatsappUrl, "_blank")}
             >
               Fale conosco
             </Button>
           </motion.div>
         </div>
-
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 1.2 }}
-          className="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex flex-col items-center"
-        >
-          <span className="text-sm text-muted-foreground mb-2">Role para descobrir</span>
-          <MousePointer size={20} className="animate-bounce text-primary" />
-        </motion.div>
       </div>
     </section>
   );
