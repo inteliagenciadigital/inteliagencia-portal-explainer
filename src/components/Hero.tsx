@@ -36,7 +36,7 @@ const Hero: React.FC<HeroProps> = ({
         }} transition={{
           duration: 0.6
         }} className="mb-6">
-            <img alt="Inteliagencia Digital Logo" className="w-32 h-32 object-contain mb-6" src="/lovable-uploads/876aba16-ddfb-43a1-b6fd-69f8dde7d029.jpg" />
+            <img alt="Inteliagencia Digital Logo" className="w-32 h-32 object-contain mb-6" src="/lovable-uploads/c4781fe0-c5da-451b-8154-680a5e5572e2.png" />
             <span className="inline-block py-1 px-4 rounded-full bg-primary/10 text-primary text-sm font-medium mb-5">
               Transformação Digital
             </span>
