@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
 import { Menu, X } from 'lucide-react';
 import { Button } from "@/components/ui/button";
+import { Link } from 'react-router-dom';
 
 interface NavbarProps {
   className?: string;
@@ -22,18 +23,23 @@ const Navbar: React.FC<NavbarProps> = ({ className }) => {
   }, []);
 
   const navLinks = [
-    { name: 'Início', href: '#hero' },
-    { name: 'Serviços', href: '#services' },
-    { name: 'Sobre', href: '#about' },
-    { name: 'Contato', href: '#contact' }
+    { name: 'Início', href: '/#hero' },
+    { name: 'Serviços', href: '/#services' },
+    { name: 'Sobre', href: '/#about' },
+    { name: 'Novidades', href: '/blog' },
+    { name: 'Contato', href: '/#contact' }
   ];
 
   const scrollToSection = (href: string) => {
     setIsMobileMenuOpen(false);
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+    if (href.startsWith('/#')) {
+      // For hash links in the home page
+      const element = document.querySelector(href.substring(1));
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
     }
+    // For regular links, let the Link component handle it
   };
 
   // URL do WhatsApp
@@ -51,29 +57,41 @@ const Navbar: React.FC<NavbarProps> = ({ className }) => {
     >
       <div className="container mx-auto px-4 sm:px-6 flex items-center justify-between">
         <div className="flex items-center gap-3">
-          <img 
-            src="/lovable-uploads/09033ecd-c350-44a3-9713-f7d158982add.png" 
-            alt="Inteliagencia Digital Logo" 
-            className="w-12 h-12 object-contain"
-          />
-          <a
-            href="#"
+          <Link to="/">
+            <img 
+              src="/lovable-uploads/09033ecd-c350-44a3-9713-f7d158982add.png" 
+              alt="Inteliagencia Digital Logo" 
+              className="w-12 h-12 object-contain"
+            />
+          </Link>
+          <Link
+            to="/"
             className="text-2xl font-display font-semibold text-foreground transition-opacity hover:opacity-80"
           >
             Inteliagencia Digital
-          </a>
+          </Link>
         </div>
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center space-x-8">
           {navLinks.map((link, index) => (
-            <button
-              key={link.name}
-              onClick={() => scrollToSection(link.href)}
-              className="text-foreground/80 hover:text-foreground font-medium transition-colors"
-            >
-              {link.name}
-            </button>
+            link.href.startsWith('/#') ? (
+              <button
+                key={link.name}
+                onClick={() => scrollToSection(link.href)}
+                className="text-foreground/80 hover:text-foreground font-medium transition-colors"
+              >
+                {link.name}
+              </button>
+            ) : (
+              <Link
+                key={link.name}
+                to={link.href}
+                className="text-foreground/80 hover:text-foreground font-medium transition-colors"
+              >
+                {link.name}
+              </Link>
+            )
           ))}
           <Button
             onClick={() => window.open(whatsappUrl, "_blank")}
@@ -103,13 +121,24 @@ const Navbar: React.FC<NavbarProps> = ({ className }) => {
       >
         <div className="container mx-auto px-4 flex flex-col space-y-4">
           {navLinks.map((link) => (
-            <button
-              key={link.name}
-              onClick={() => scrollToSection(link.href)}
-              className="py-2 text-foreground/80 hover:text-foreground font-medium text-lg transition-colors"
-            >
-              {link.name}
-            </button>
+            link.href.startsWith('/#') ? (
+              <button
+                key={link.name}
+                onClick={() => scrollToSection(link.href)}
+                className="py-2 text-foreground/80 hover:text-foreground font-medium text-lg transition-colors"
+              >
+                {link.name}
+              </button>
+            ) : (
+              <Link
+                key={link.name}
+                to={link.href}
+                className="py-2 text-foreground/80 hover:text-foreground font-medium text-lg transition-colors"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                {link.name}
+              </Link>
+            )
           ))}
           <Button
             onClick={() => window.open(whatsappUrl, "_blank")}
