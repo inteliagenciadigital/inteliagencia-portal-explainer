@@ -52,7 +52,7 @@ const Navbar: React.FC<NavbarProps> = ({ className }) => {
       <div className="container mx-auto px-4 sm:px-6 flex items-center justify-between">
         <div className="flex items-center gap-3">
           <img 
-            src="/lovable-uploads/c4781fe0-c5da-451b-8154-680a5e5572e2.png" 
+            src="/lovable-uploads/09033ecd-c350-44a3-9713-f7d158982add.png" 
             alt="Inteliagencia Digital Logo" 
             className="w-12 h-12 object-contain"
           />
