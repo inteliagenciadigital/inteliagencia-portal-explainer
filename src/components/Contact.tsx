@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
@@ -56,8 +55,8 @@ const Contact: React.FC<ContactProps> = ({ className }) => {
     {
       icon: Mail,
       title: 'Email',
-      value: 'contato@inteliagencia.com',
-      href: 'mailto:contato@inteliagencia.com',
+      value: 'contato@inteliagenciadigital.com.br',
+      href: 'mailto:contato@inteliagenciadigital.com.br',
     },
     {
       icon: Phone,
@@ -68,8 +67,8 @@ const Contact: React.FC<ContactProps> = ({ className }) => {
     {
       icon: MapPin,
       title: 'Endereço',
-      value: 'Av. Paulista, 1000 - São Paulo, SP',
-      href: 'https://maps.google.com/?q=Av.+Paulista,+1000,+São+Paulo,+SP',
+      value: 'Rua Waddia Jafete Assad, 555 SBC - SP',
+      href: 'https://maps.google.com/?q=Rua+Waddia+Jafete+Assad,+555,+São+Bernardo+do+Campo,+SP',
     },
   ];
 
